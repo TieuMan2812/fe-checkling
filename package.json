@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "W3",
   "productName": "wooeu",
-  "author": "W3996",
+  "author": "W3 demo",
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
