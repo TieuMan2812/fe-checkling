@@ -109,7 +109,7 @@
     <div class="col-12 col-sm-5">
       <q-img
           class="q-ma-sm full-wdith"
-          src="../images/screen-3.png"
+          src="https://m.media-amazon.com/images/I/91TrVCCNN0L._SX1200_.jpg"
           :ratio="16/9"
         />
     </div>
