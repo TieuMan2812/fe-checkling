@@ -107,7 +107,11 @@
         </q-form>
     </div>
     <div class="col-12 col-sm-6">
-<p>gggg</p>
+    <q-img
+          class="q-ma-sm full-wdith"
+          src="https://m.media-amazon.com/images/I/91TrVCCNN0L._SX1200_.jpg"
+          :ratio="16/9"
+        />
   </div>
     <div class="col-12 col-sm-2"></div>
 </div>
