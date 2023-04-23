@@ -2,23 +2,24 @@
   <q-page>
     <div class="row q-ma-sm">
       <div class="col-12">
-        <h4>Quản lý dữ liệu</h4>
-        <q-btn
+        <!--<q-btn
           label="Thêm dữ liệu"
           color="primary"
           icon="add"
           @click="isCreate = true"
           class="q-mr-sm"
-        />
+        />-->
         <q-btn
+        
           label="Tải lại"
           color="primary"
           icon="refresh"
           @click="doFetch()"
-          class="q-mr-sm"
+          class="q-ma-sm left"
         />
       </div>
-      <div class="col-2" v-if="isCreate">
+  
+     <!-- <div class="col-2" v-if="isCreate">
         <q-form
           class="q-ma-sm"
           @submit.prevent="doCreate"
@@ -110,14 +111,16 @@
             />
           </q-stepper>
         </q-form>
-      </div>
+      </div>-->
       <div :class="isCreate ? 'col-10':'col-12'">
         <q-table
-          title="Dữ liệu"
+            
+          title="Quản lý dữ liệu:"
+          class="my-sticky-header-column-table"
+          flat bordered
           :rows="data"
           :columns="columns"
           row-key="id"
-          class="q-mt-sm"
           :loading="isLoadData"
           loading-label="Đang tải dữ liệu"
           no-data-label="Không có dữ liệu"
@@ -130,31 +133,21 @@
                 :key="col.name"
                 :props="props"
               >
-                <template v-if="col.name === 'notes'">
+                <template v-if="col.name === 'actions'">
                   <q-form
                     @submit.prevent="doUpdate()"
                   >
+                  <!-- :rules="[ val => val && val.length >= 0 || 'Không được để trống']" -->
                     <template v-if="isEditNote === props.row.id">
                         <q-input
                           v-model="editNote"
                           class="q-mb-md"
                           outlined
                           label="Notes: "
-                          type="textarea"
+                          type="text"
                           clearable
-                          :rules="[ val => val && val.length > 0 || 'Không được để trống']"
+                          
                         />
-                    </template>
-                    <template v-else>
-                      <div class="q-mb-sm">
-                        <q-input
-                          v-model="props.row['notes']"
-                          class="q-mb-md"
-                          outlined
-                          type="textarea"
-                          readonly
-                        />
-                      </div>
                     </template>
                     <div>
                         <q-btn
@@ -247,8 +240,9 @@ export default defineComponent({
       { name: 'victim', align: 'center', label: 'Victim', field: 'victim', sortable: true },
       { name: 'phone', align: 'center', label: 'Phone', field: 'phone', sortable: true },
       { name: 'rankings', align: 'center', label: 'Rankings', field: 'rankings', sortable: true },
-      { name: 'etags', align: 'center', label: 'ETgs', field: 'etags', sortable: true },
+      { name: 'etags', align: 'center', label: 'ETags', field: 'etags', sortable: true },
       { name: 'notes', align: 'center', label: 'Notes', field: 'notes', sortable: true },
+      { name: 'actions', align: 'center', label: 'Actions', field: 'actions', sortable: true },
     ]
     return {
       step,
@@ -358,3 +352,15 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="sass">
+.my-sticky-header-column-table
+  /* height or max-height is important */
+  height: auto
+ 
+  tr th
+    position: sticky
+    /* higher than z-index for td below */
+    z-index: 2
+    /* bg color is important; just specify one */
+    background: #1976D2
+</style>

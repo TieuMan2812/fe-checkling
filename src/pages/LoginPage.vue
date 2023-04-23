@@ -82,7 +82,7 @@ export default defineComponent({
               token: resp.token,
               user: this.username
             })
-            this.$router.push('/')
+            this.$router.push('/admin')
           }else{
             const message = resp.message || 'Đăng nhập thất bại'
             new alert().Error({message})

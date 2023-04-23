@@ -127,9 +127,15 @@
   </div>
   <div class="col-12 col-sm-3"></div>
 </div>
+<q-separator inset />
+<div class="row">
+  <div class="col-12 col-sm-3">LIÊN HỆ</div>
+  <div class="col-12 col-sm-6">THÔNG TIN</div>
+  <div class="col-12 col-sm-3">DỊCH VỤ</div>
+</div>
 <q-footer reveal elevated>
         <q-toolbar>
-          <q-toolbar-title>Footer</q-toolbar-title>
+          <q-toolbar-title>Footers</q-toolbar-title>
         </q-toolbar>
       </q-footer>
 </template>

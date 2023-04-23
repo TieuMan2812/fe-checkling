@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          ThanhCode
+          W3-ETC
         </q-toolbar-title>
 
         <div>0.0.2</div>
@@ -62,13 +62,13 @@ const linksList = [
     title: 'Dữ liệu',
     caption: 'Quản lí dữ liệu nhập vào',
     icon: 'analytics',
-    link: '/home'
+    link: './home'
   },
   {
     title: 'Tài khoản',
     caption: 'Quản lí tài khoản',
     icon: 'group',
-    link: '/account'
+    link: './account'
   },
 ]
 
